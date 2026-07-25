@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Say goodbye</title>
+  <meta name="description" content="A little goodbye from me. Type something." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+
+    <header class="header">
+      <h1 id="page-title">Say something</h1>
+      <p id="intro-line" class="intro"></p>
+    </header>
+
+    <!-- Video stage: one idle loop underneath, two reaction layers on top
+         that crossfade in and out. -->
+    <section class="stage" aria-label="Video">
+      <div class="stage-inner">
+        <video id="idle-video" class="layer is-visible" playsinline muted loop preload="auto"></video>
+        <video id="reaction-0" class="layer" playsinline preload="auto"></video>
+        <video id="reaction-1" class="layer" playsinline preload="auto"></video>
+
+        <div id="stage-placeholder" class="stage-placeholder">
+          <span>Add your idle video URL in <code>data/responses.json</code></span>
+        </div>
+      </div>
+
+      <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false" hidden>
+        Sound is off — tap to unmute
+      </button>
+    </section>
+
+    <section class="conversation" aria-live="polite" aria-label="Conversation">
+      <ul id="messages" class="messages"></ul>
+    </section>
+
+    <form id="chat-form" class="composer" autocomplete="off">
+      <label class="visually-hidden" for="chat-input">Your message</label>
+      <input
+        id="chat-input"
+        class="composer-input"
+        type="text"
+        maxlength="400"
+        placeholder="Say something..."
+        required
+      />
+      <button id="chat-send" class="composer-send" type="submit">Send</button>
+    </form>
+
+    <footer class="footer">
+      <p>Made with far too much care on my way out the door.</p>
+    </footer>
+
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
