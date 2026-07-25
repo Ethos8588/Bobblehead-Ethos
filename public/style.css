@@ -1,0 +1,283 @@
+/* ------------------------------------------------------------------
+   Farewell chat — styles
+   Small, dependency-free, works light and dark, works on phones.
+   Safe things to tweak: the colours in :root, and --stage-ratio.
+------------------------------------------------------------------- */
+
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --surface-alt: #ecebe6;
+  --ink: #1b1b1a;
+  --ink-soft: #6b6a65;
+  --accent: #2f6f5e;
+  --accent-ink: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+
+  /* Shape of the video area. 1 / 1 is square; try 3 / 4 or 9 / 16 for portrait. */
+  --stage-ratio: 1 / 1;
+  --stage-max: 420px;
+
+  /* How slow the crossfade is. */
+  --fade: 450ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14150f;
+    --surface: #1e1f19;
+    --surface-alt: #2a2b24;
+    --ink: #f2f1ea;
+    --ink-soft: #a5a49c;
+    --accent: #6fd0b0;
+    --accent-ink: #10231d;
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100dvh;
+}
+
+/* ---------------- Header ---------------- */
+
+.header { text-align: center; }
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.intro {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------- Video stage ---------------- */
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stage-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--stage-max);
+  aspect-ratio: var(--stage-ratio);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-alt);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity var(--fade) ease-in-out;
+  will-change: opacity;
+  pointer-events: none;
+  background: var(--surface-alt);
+}
+
+.layer.is-visible { opacity: 1; }
+
+.stage-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.stage-placeholder[hidden] { display: none; }
+
+.stage-placeholder code {
+  background: var(--surface);
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.sound-toggle {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sound-toggle:hover { color: var(--ink); }
+
+/* ---------------- Conversation ---------------- */
+
+.conversation { flex: 1 1 auto; }
+
+.messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  animation: rise 260ms ease-out both;
+  overflow-wrap: anywhere;
+}
+
+.bubble.from-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-bottom-right-radius: 5px;
+}
+
+.bubble.from-them {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 5px;
+}
+
+.bubble.is-error {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* typing dots */
+.typing { display: inline-flex; gap: 4px; align-items: center; height: 1.4em; }
+
+.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  animation: blink 1.2s infinite ease-in-out;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.18s; }
+.typing span:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes blink {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30%           { opacity: 1;    transform: translateY(-3px); }
+}
+
+/* ---------------- Composer ---------------- */
+
+.composer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+  background: linear-gradient(to top, var(--bg) 65%, transparent);
+}
+
+.composer-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 16px; /* 16px stops iOS zooming in on focus */
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+}
+
+.composer-input:focus { border-color: var(--accent); }
+
+.composer-send {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.composer-send:disabled { opacity: 0.5; cursor: default; }
+
+/* ---------------- Footer ---------------- */
+
+.footer {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+}
+
+.footer p { margin: 0; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer { transition-duration: 1ms; }
+  .bubble { animation: none; }
+  .typing span { animation: none; opacity: 0.5; }
+}
