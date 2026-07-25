@@ -1,0 +1,14 @@
+{
+  "name": "farewell-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A little interactive goodbye page: type a message, get a video reply.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test-matching": "node scripts/test-matching.mjs",
+    "precompute-embeddings": "node scripts/precompute-embeddings.mjs"
+  }
+}
