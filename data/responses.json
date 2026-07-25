@@ -1,0 +1,230 @@
+{
+  "_readme": "THIS FILE IS THE SOURCE OF TRUTH. Edit the text and videoUrl fields, then redeploy. Every videoUrl that still starts with REPLACE_ME will fall back to the idle video. See README.md, section 'Step 6: Upload your videos'.",
+
+  "meta": {
+    "ownerName": "Anthos",
+    "pageTitle": "Anthos is leaving. Say something.",
+    "introLine": "Type me a message and I'll answer. Yes, it's really me. Sort of.",
+    "inputPlaceholder": "Say something to Anthos...",
+    "idleVideoUrl": "REPLACE_ME_IDLE_LOOP",
+    "idlePosterUrl": ""
+  },
+
+  "matching": {
+    "tier0MinScore": 0.62,
+    "tier1MinSimilarity": 0.55,
+    "enableTier1": true,
+    "enableTier2": true,
+    "embeddingModel": "voyage-4-lite",
+    "classifierModel": "claude-haiku-4-5",
+    "maxMessageLength": 400
+  },
+
+  "categories": [
+    {
+      "id": "greeting",
+      "label": "Greeting",
+      "description": "A simple hello or opening message",
+      "triggers": ["hi", "hello", "hey", "yo", "good morning", "howdy", "hey there", "sup", "hiya", "morning"],
+      "variants": [
+        { "id": "greeting_a", "weight": 3, "text": "Hey! You came. That's more than I expected.", "videoUrl": "REPLACE_ME_GREETING_A" },
+        { "id": "greeting_b", "weight": 2, "text": "Hello! Welcome to my very professional farewell website.", "videoUrl": "REPLACE_ME_GREETING_B" },
+        { "id": "greeting_c", "weight": 1, "text": "Oh hi. I was just standing here looping.", "videoUrl": "REPLACE_ME_GREETING_C" }
+      ]
+    },
+    {
+      "id": "goodbye",
+      "label": "Goodbye",
+      "description": "Saying bye, farewell, or signing off",
+      "triggers": ["bye", "goodbye", "see ya", "see you later", "farewell", "take care", "catch you later", "peace out", "adios", "later"],
+      "variants": [
+        { "id": "goodbye_a", "weight": 3, "text": "Bye! Or as I'm now legally required to say, \"let's keep in touch.\"", "videoUrl": "REPLACE_ME_GOODBYE_A" },
+        { "id": "goodbye_b", "weight": 2, "text": "See you around. Genuinely.", "videoUrl": "REPLACE_ME_GOODBYE_B" }
+      ]
+    },
+    {
+      "id": "compliment",
+      "label": "Compliment",
+      "description": "Praising me, saying I was good at my job or a good colleague",
+      "triggers": ["you're the best", "you were great", "best coworker ever", "you're awesome", "legend", "you're brilliant", "you were so good at your job", "we appreciated you", "you're a star", "goat"],
+      "variants": [
+        { "id": "compliment_a", "weight": 3, "text": "Stop it. Keep going. Stop it.", "videoUrl": "REPLACE_ME_COMPLIMENT_A" },
+        { "id": "compliment_b", "weight": 2, "text": "I'm putting that in writing and forwarding it to HR on my way out.", "videoUrl": "REPLACE_ME_COMPLIMENT_B" },
+        { "id": "compliment_c", "weight": 1, "text": "Honestly? Same to you.", "videoUrl": "REPLACE_ME_COMPLIMENT_C" }
+      ]
+    },
+    {
+      "id": "roast",
+      "label": "Playful roast",
+      "description": "Teasing, insulting, or roasting me in a friendly way",
+      "triggers": ["you were terrible", "good riddance", "finally you're leaving", "you were the worst", "nobody will miss you", "you never did any work", "you stole my lunch", "worst hire ever", "you're overrated", "took you long enough"],
+      "variants": [
+        { "id": "roast_a", "weight": 3, "text": "Wow. On my last week. Bold.", "videoUrl": "REPLACE_ME_ROAST_A" },
+        { "id": "roast_b", "weight": 2, "text": "You know I still have building access until Friday, right?", "videoUrl": "REPLACE_ME_ROAST_B" },
+        { "id": "roast_c", "weight": 1, "text": "Fair. Genuinely fair.", "videoUrl": "REPLACE_ME_ROAST_C" }
+      ]
+    },
+    {
+      "id": "why_leaving",
+      "label": "Why are you leaving",
+      "description": "Asking my reason for leaving the job",
+      "triggers": ["why are you leaving", "why did you quit", "what made you leave", "why go", "was it something we said", "did they push you out", "why now", "why are you resigning", "what happened"],
+      "variants": [
+        { "id": "why_a", "weight": 3, "text": "New chapter, same me, slightly better chair.", "videoUrl": "REPLACE_ME_WHY_A" },
+        { "id": "why_b", "weight": 2, "text": "It was time. Also nobody ever fixed the printer.", "videoUrl": "REPLACE_ME_WHY_B" }
+      ]
+    },
+    {
+      "id": "where_going",
+      "label": "Where are you going",
+      "description": "Asking about my new job, new company, or next destination",
+      "triggers": ["where are you going", "what's your new job", "who are you joining", "new company", "what will you be doing", "where next", "are you going to a competitor", "what's the new role", "are you joining a startup"],
+      "variants": [
+        { "id": "where_a", "weight": 3, "text": "Somewhere new, somewhere exciting, somewhere with a proper coffee machine.", "videoUrl": "REPLACE_ME_WHERE_A" },
+        { "id": "where_b", "weight": 2, "text": "Ask me over a drink and I'll tell you everything.", "videoUrl": "REPLACE_ME_WHERE_B" }
+      ]
+    },
+    {
+      "id": "keep_in_touch",
+      "label": "Keep in touch",
+      "description": "Asking to stay in contact, swap numbers, or connect online",
+      "triggers": ["keep in touch", "stay in touch", "add me on linkedin", "what's your number", "let's grab coffee", "don't be a stranger", "message me", "we should catch up", "send me your email"],
+      "variants": [
+        { "id": "touch_a", "weight": 3, "text": "Absolutely. LinkedIn, WhatsApp, carrier pigeon — I'm reachable.", "videoUrl": "REPLACE_ME_TOUCH_A" },
+        { "id": "touch_b", "weight": 2, "text": "Please do. I will be the one replying six days later.", "videoUrl": "REPLACE_ME_TOUCH_B" }
+      ]
+    },
+    {
+      "id": "miss_you",
+      "label": "We'll miss you",
+      "description": "Telling me they'll miss me or that it won't be the same without me",
+      "triggers": ["i'll miss you", "we'll miss you", "it won't be the same", "the team won't be the same", "gonna miss you", "sad you're going", "who am i going to talk to now", "don't go"],
+      "variants": [
+        { "id": "miss_a", "weight": 3, "text": "Don't. I'm barely holding it together as it is.", "videoUrl": "REPLACE_ME_MISS_A" },
+        { "id": "miss_b", "weight": 2, "text": "I'll miss you too. Obviously.", "videoUrl": "REPLACE_ME_MISS_B" }
+      ]
+    },
+    {
+      "id": "good_luck",
+      "label": "Good luck",
+      "description": "Wishing me luck or success in whatever comes next",
+      "triggers": ["good luck", "all the best", "best of luck", "smash it", "go get em", "you'll do great", "wishing you well", "knock em dead", "congrats on the new role"],
+      "variants": [
+        { "id": "luck_a", "weight": 3, "text": "Thank you! I'll need roughly all of it.", "videoUrl": "REPLACE_ME_LUCK_A" },
+        { "id": "luck_b", "weight": 2, "text": "Appreciate that more than you know.", "videoUrl": "REPLACE_ME_LUCK_B" }
+      ]
+    },
+    {
+      "id": "thank_you",
+      "label": "Thank you",
+      "description": "Thanking me for help, work, mentoring, or friendship",
+      "triggers": ["thank you", "thanks for everything", "thanks for the help", "i appreciate you", "you taught me a lot", "cheers for all your help", "grateful", "thanks"],
+      "variants": [
+        { "id": "thanks_a", "weight": 3, "text": "No — thank you. Sincerely.", "videoUrl": "REPLACE_ME_THANKS_A" },
+        { "id": "thanks_b", "weight": 2, "text": "That means a lot. Now stop, people are watching.", "videoUrl": "REPLACE_ME_THANKS_B" }
+      ]
+    },
+    {
+      "id": "inside_joke",
+      "label": "Work in-jokes",
+      "description": "References to meetings, standups, Slack, tickets, emails, deadlines, office life",
+      "triggers": ["another meeting", "standup", "jira ticket", "slack message", "reply all", "sprint planning", "the deadline", "quick sync", "this could have been an email", "who's taking your tickets", "your inbox"],
+      "variants": [
+        { "id": "joke_a", "weight": 3, "text": "Not my problem after Friday. Say it with me.", "videoUrl": "REPLACE_ME_JOKE_A" },
+        { "id": "joke_b", "weight": 2, "text": "I've marked it as Won't Fix and I've never been happier.", "videoUrl": "REPLACE_ME_JOKE_B" },
+        { "id": "joke_c", "weight": 1, "text": "I'm declining that invite from beyond the grave.", "videoUrl": "REPLACE_ME_JOKE_C" }
+      ]
+    },
+    {
+      "id": "advice",
+      "label": "Any advice",
+      "description": "Asking me for advice, wisdom, or tips for the people staying behind",
+      "triggers": ["any advice", "what should we do", "got any tips", "words of wisdom", "what should i know", "how do i survive here", "advice for the team", "what would you tell your younger self"],
+      "variants": [
+        { "id": "advice_a", "weight": 3, "text": "Take the lunch break. Every single day. That's it, that's the wisdom.", "videoUrl": "REPLACE_ME_ADVICE_A" },
+        { "id": "advice_b", "weight": 2, "text": "Ask the annoying question early. It's cheaper than asking it late.", "videoUrl": "REPLACE_ME_ADVICE_B" }
+      ]
+    },
+    {
+      "id": "favorite_memory",
+      "label": "Favourite memory",
+      "description": "Asking about my best memory, favourite moment, or highlight here",
+      "triggers": ["favourite memory", "favorite memory", "best moment", "highlight of your time here", "what was the best bit", "remember when", "best day here", "proudest moment"],
+      "variants": [
+        { "id": "memory_a", "weight": 3, "text": "Too many to pick. Most of them happened in a kitchen, not a meeting room.", "videoUrl": "REPLACE_ME_MEMORY_A" },
+        { "id": "memory_b", "weight": 2, "text": "You know the one. We agreed never to speak of it.", "videoUrl": "REPLACE_ME_MEMORY_B" }
+      ]
+    },
+    {
+      "id": "food_coffee",
+      "label": "Food, coffee and snacks",
+      "description": "Anything about lunch, coffee, snacks, the office kitchen or the fridge",
+      "triggers": ["coffee", "lunch", "snacks", "who's buying", "the office kitchen", "biscuits", "you owe me a coffee", "the good mugs", "tea round", "fridge"],
+      "variants": [
+        { "id": "food_a", "weight": 3, "text": "The fridge is yours now. I'm sorry.", "videoUrl": "REPLACE_ME_FOOD_A" },
+        { "id": "food_b", "weight": 2, "text": "I'm taking the good mug. This is non-negotiable.", "videoUrl": "REPLACE_ME_FOOD_B" }
+      ]
+    },
+    {
+      "id": "come_back",
+      "label": "Will you come back",
+      "description": "Asking whether I'll return, visit, or regret leaving",
+      "triggers": ["will you come back", "are you coming back", "boomerang", "will you visit", "you'll regret it", "we'll leave the light on", "the door's always open", "come back soon"],
+      "variants": [
+        { "id": "back_a", "weight": 3, "text": "Never say never. Especially if you're buying lunch.", "videoUrl": "REPLACE_ME_BACK_A" },
+        { "id": "back_b", "weight": 2, "text": "I'll visit. I'll even sign in at reception like a stranger.", "videoUrl": "REPLACE_ME_BACK_B" }
+      ]
+    },
+    {
+      "id": "what_will_you_miss",
+      "label": "What will you miss",
+      "description": "Asking what I will miss about this place or these people",
+      "triggers": ["what will you miss", "what are you going to miss", "will you miss us", "what won't you miss", "anything you'll miss", "will you miss this place"],
+      "variants": [
+        { "id": "willmiss_a", "weight": 3, "text": "The people. Obviously the people. Definitely not the parking.", "videoUrl": "REPLACE_ME_WILLMISS_A" },
+        { "id": "willmiss_b", "weight": 2, "text": "All of you. Some of you slightly more. You know who you are.", "videoUrl": "REPLACE_ME_WILLMISS_B" }
+      ]
+    },
+    {
+      "id": "party",
+      "label": "Leaving drinks and celebration",
+      "description": "Talk of the send-off, leaving drinks, party, cheers, celebration",
+      "triggers": ["leaving drinks", "are we having a party", "cheers", "first round's on you", "send off", "pub", "celebration", "are you coming out friday", "are we going out"],
+      "variants": [
+        { "id": "party_a", "weight": 3, "text": "First round is on me. Second round is on you. Third round is a mystery.", "videoUrl": "REPLACE_ME_PARTY_A" },
+        { "id": "party_b", "weight": 2, "text": "I'll be there. I'll be emotional. Bring tissues.", "videoUrl": "REPLACE_ME_PARTY_B" }
+      ]
+    },
+    {
+      "id": "affection",
+      "label": "Affectionate or soppy",
+      "description": "Warm, soppy, or affectionate messages, hugs, work-spouse jokes",
+      "triggers": ["i love you", "love ya", "you're my favourite", "you're my favorite", "my work husband", "my work wife", "big hug", "hugs", "you're family"],
+      "variants": [
+        { "id": "affection_a", "weight": 3, "text": "Love you too. In an entirely HR-compliant way.", "videoUrl": "REPLACE_ME_AFFECTION_A" },
+        { "id": "affection_b", "weight": 2, "text": "That's very sweet and I'm choosing to believe you mean it.", "videoUrl": "REPLACE_ME_AFFECTION_B" }
+      ]
+    },
+    {
+      "id": "nonsense",
+      "label": "Nonsense and chaos",
+      "description": "Gibberish, keyboard mashing, laughing, random silly noise, emoji spam",
+      "triggers": ["asdfgh", "lol", "haha", "bruh", "?????", "blah blah", "wjdkalsd", "beep boop", "hahaha", "lmao"],
+      "variants": [
+        { "id": "nonsense_a", "weight": 3, "text": "I have no idea what that meant and I respect it enormously.", "videoUrl": "REPLACE_ME_NONSENSE_A" },
+        { "id": "nonsense_b", "weight": 2, "text": "Understood. Completely. Absolutely no notes.", "videoUrl": "REPLACE_ME_NONSENSE_B" }
+      ]
+    },
+    {
+      "id": "fallback",
+      "label": "Anything else",
+      "description": "Use this when the message does not fit any other category",
+      "triggers": [],
+      "variants": [
+        { "id": "fallback_a", "weight": 3, "text": "I have no idea how to respond to that, and I love that for us.", "videoUrl": "REPLACE_ME_FALLBACK_A" },
+        { "id": "fallback_b", "weight": 2, "text": "Interesting. Say more. Actually, don't — I'm leaving.", "videoUrl": "REPLACE_ME_FALLBACK_B" },
+        { "id": "fallback_c", "weight": 1, "text": "That one's going in the memoir.", "videoUrl": "REPLACE_ME_FALLBACK_C" }
+      ]
+    }
+  ]
+}
