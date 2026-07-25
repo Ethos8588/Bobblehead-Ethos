@@ -13,7 +13,7 @@
   "matching": {
     "tier0MinScore": 0.62,
     "tier1MinSimilarity": 0.55,
-    "enableTier1": true,
+    "enableTier1": false,
     "enableTier2": true,
     "embeddingModel": "voyage-4-lite",
     "classifierModel": "claude-haiku-4-5",
