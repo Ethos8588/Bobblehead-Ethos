@@ -1,0 +1,20 @@
+# Never commit real API keys
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Don't commit big video files — host them on R2/Cloudinary instead
+*.mp4
+*.mov
+*.webm

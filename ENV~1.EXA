@@ -1,0 +1,20 @@
+# ------------------------------------------------------------------
+# Environment variables for the farewell chat site.
+#
+# This file lists the NAMES only. Never put a real key in here, and never
+# commit a file containing real keys to GitHub.
+#
+# In real life you paste these into Vercel:
+#   Vercel dashboard -> your project -> Settings -> Environment Variables
+# See README.md, "Step 5: Add your API keys to Vercel".
+# ------------------------------------------------------------------
+
+# Voyage AI key, used by Tier 1 (the embeddings step).
+# Get it from https://dashboard.voyageai.com  -> API Keys
+# Optional: if this is missing, the site just skips Tier 1.
+VOYAGE_API_KEY=
+
+# Anthropic key, used by Tier 2 (the Claude fallback step).
+# Get it from https://platform.claude.com -> API keys
+# Optional: if this is missing, unmatched messages use the "fallback" category.
+ANTHROPIC_API_KEY=
