@@ -1,0 +1,69 @@
+{
+  "_readme": "Source of truth for the shooting script. Edit a line here, then run: node scripts/apply-script.mjs — it updates data/responses.json and regenerates SHOOTING-SCRIPT.md.",
+  "idle": { "do": "Sit still. Breathe. Blink. Small shift of weight halfway through. Look at the lens like you're waiting for someone to speak. 15 seconds, no talking.", "line": "" },
+
+  "greeting_a": { "do": "Look up like you've just noticed them. Small genuine smile.", "line": "Hey! You came. That's more than I expected." },
+  "greeting_b": { "do": "Open both arms slightly, mock-presenting the room.", "line": "Welcome to my very professional farewell website." },
+  "greeting_c": { "do": "Deadpan. Barely move.", "line": "Oh. Hi. I was just standing here looping." },
+
+  "goodbye_a": { "do": "Small wave, then let the hand drop like you regret starting it.", "line": "Bye! Or as I'm now contractually required to say — let's keep in touch." },
+  "goodbye_b": { "do": "Nod once. Hold eye contact a beat longer than comfortable.", "line": "See you around. Genuinely." },
+
+  "compliment_a": { "do": "Wave it away, then immediately gesture for more.", "line": "Stop it. Keep going. Stop it." },
+  "compliment_b": { "do": "Point at the camera like you're taking a note.", "line": "I'm putting that in writing and forwarding it to HR on my way out." },
+  "compliment_c": { "do": "Drop the bit. Say it straight.", "line": "Honestly? Same to you." },
+
+  "roast_a": { "do": "Slow blink. Lean back.", "line": "Wow. On my last week. Bold." },
+  "roast_b": { "do": "Tap your badge or your chest. Slight menace, all friendly.", "line": "You know I've still got building access until Friday, right?" },
+  "roast_c": { "do": "Shrug, mouth turned down. Fully conceding.", "line": "Fair. Genuinely fair." },
+
+  "why_a": { "do": "Casual. Like it's obvious.", "line": "New chapter, same me, slightly better chair." },
+  "why_b": { "do": "Start sincere, then let it curdle.", "line": "It was time. Also nobody ever fixed that printer." },
+
+  "where_a": { "do": "Look off to the middle distance, mock-wistful.", "line": "Somewhere new. Somewhere exciting. Somewhere with a working coffee machine." },
+  "where_b": { "do": "Mime raising a glass.", "line": "Buy me a drink and I'll tell you everything." },
+
+  "touch_a": { "do": "Count them off on your fingers.", "line": "Absolutely. LinkedIn, WhatsApp, carrier pigeon. I'm reachable." },
+  "touch_b": { "do": "Point at yourself, slightly ashamed.", "line": "Please do. I'll be the one replying six days later." },
+
+  "miss_a": { "do": "Hand up, look away. Genuinely a bit caught out.", "line": "Don't. I'm barely holding it together as it is." },
+  "miss_b": { "do": "Straight to camera. No joke in it.", "line": "I'll miss you too. Obviously." },
+
+  "luck_a": { "do": "Grateful, slightly nervous laugh.", "line": "Thank you. I'll need roughly all of it." },
+  "luck_b": { "do": "Hand on heart, brief.", "line": "That means more than you know." },
+
+  "thanks_a": { "do": "Shake your head, point back at them.", "line": "No — thank you. Sincerely." },
+  "thanks_b": { "do": "Glance off-camera like someone's watching.", "line": "That means a lot. Now stop, people are looking." },
+
+  "joke_a": { "do": "Point at camera. Mouth the words with them.", "line": "Not my problem after Friday. Say it with me." },
+  "joke_b": { "do": "Mime closing a laptop. Enormous contentment.", "line": "I've marked it Won't Fix and I've never been happier." },
+  "joke_c": { "do": "Wave slowly, like a ghost.", "line": "I'm declining that invite from beyond the grave." },
+
+  "advice_a": { "do": "Very serious. Point for emphasis.", "line": "Take the lunch break. Every single day. That's it. That's the wisdom." },
+  "advice_b": { "do": "Lean in slightly, like real advice.", "line": "Ask the stupid question early. It's much cheaper than asking it late." },
+
+  "memory_a": { "do": "Puff cheeks, look up, genuinely thinking.", "line": "Too many to pick. Most of them happened in a kitchen, not a meeting room." },
+  "memory_b": { "do": "Narrow your eyes. Point slowly.", "line": "You know the one. We agreed never to speak of it." },
+
+  "food_a": { "do": "Grimace. Genuine apology.", "line": "The fridge is yours now. I'm so sorry." },
+  "food_b": { "do": "Hold up an imaginary mug. Non-negotiable.", "line": "I'm taking the good mug. This isn't a discussion." },
+
+  "back_a": { "do": "Tilt head, weighing it up.", "line": "Never say never. Especially if you're buying lunch." },
+  "back_b": { "do": "Mime signing a visitor book.", "line": "I'll visit. I'll even sign in at reception like a stranger." },
+
+  "willmiss_a": { "do": "Warm, then a hard turn on the last bit.", "line": "The people. Obviously the people. Absolutely not the parking." },
+  "willmiss_b": { "do": "Point vaguely around the room. Knowing look.", "line": "All of you. Some of you slightly more. You know who you are." },
+
+  "party_a": { "do": "Three fingers, counting down, getting less confident.", "line": "First round's on me. Second round's on you. Third round is a mystery." },
+  "party_b": { "do": "Dab an imaginary tear, pre-emptively.", "line": "I'll be there. I'll be emotional. Bring tissues." },
+
+  "affection_a": { "do": "Hand on heart, then a glance off-camera.", "line": "Love you too. In an entirely HR-compliant way." },
+  "affection_b": { "do": "Touched, slightly suspicious.", "line": "That's very sweet and I'm choosing to believe you mean it." },
+
+  "nonsense_a": { "do": "Long pause. Slow, respectful nod.", "line": "I have no idea what that meant and I respect it enormously." },
+  "nonsense_b": { "do": "Thumbs up. Completely straight face.", "line": "Understood. Completely. No notes." },
+
+  "fallback_a": { "do": "Blank. Then a small delighted smile.", "line": "I have no idea how to respond to that, and I love that for us." },
+  "fallback_b": { "do": "Lean in interested, then immediately give up.", "line": "Interesting. Say more. Actually, don't — I'm leaving." },
+  "fallback_c": { "do": "Point at them. Mock-solemn.", "line": "That one's going in the memoir." }
+}
