@@ -23,6 +23,7 @@
     reactions: [document.getElementById('reaction-0'), document.getElementById('reaction-1')],
     placeholder: document.getElementById('stage-placeholder'),
     soundToggle: document.getElementById('sound-toggle'),
+    conversation: document.querySelector('.conversation'),
     messages: document.getElementById('messages'),
     form: document.getElementById('chat-form'),
     input: document.getElementById('chat-input'),
@@ -152,9 +153,12 @@
     return li;
   }
 
+  // Only the conversation scrolls now — the video and composer stay put.
   function scrollToBottom() {
     requestAnimationFrame(function () {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      var box = els.conversation;
+      if (!box) return;
+      box.scrollTo({ top: box.scrollHeight, behavior: 'smooth' });
     });
   }
 
