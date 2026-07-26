@@ -13,7 +13,7 @@
   "matching": {
     "tier0MinScore": 0.62,
     "tier1MinSimilarity": 0.55,
-    "enableTier1": true,
+    "enableTier1": false,
     "enableTier2": true,
     "embeddingModel": "voyage-4-lite",
     "classifierModel": "claude-haiku-4-5",
@@ -28,8 +28,8 @@
       "triggers": ["hi", "hello", "hey", "yo", "good morning", "howdy", "hey there", "sup", "hiya", "morning"],
       "variants": [
         { "id": "greeting_a", "weight": 3, "text": "Hey! You came. That's more than I expected.", "videoUrl": "REPLACE_ME_GREETING_A" },
-        { "id": "greeting_b", "weight": 2, "text": "Hello! Welcome to my very professional farewell website.", "videoUrl": "REPLACE_ME_GREETING_B" },
-        { "id": "greeting_c", "weight": 1, "text": "Oh hi. I was just standing here looping.", "videoUrl": "REPLACE_ME_GREETING_C" }
+        { "id": "greeting_b", "weight": 2, "text": "Welcome to my very professional farewell website.", "videoUrl": "REPLACE_ME_GREETING_B" },
+        { "id": "greeting_c", "weight": 1, "text": "Oh. Hi. I was just standing here looping.", "videoUrl": "REPLACE_ME_GREETING_C" }
       ]
     },
     {
@@ -38,7 +38,7 @@
       "description": "Saying bye, farewell, or signing off",
       "triggers": ["bye", "goodbye", "see ya", "see you later", "farewell", "take care", "catch you later", "peace out", "adios", "later"],
       "variants": [
-        { "id": "goodbye_a", "weight": 3, "text": "Bye! Or as I'm now legally required to say, \"let's keep in touch.\"", "videoUrl": "REPLACE_ME_GOODBYE_A" },
+        { "id": "goodbye_a", "weight": 3, "text": "Bye! Or as I'm now contractually required to say — let's keep in touch.", "videoUrl": "REPLACE_ME_GOODBYE_A" },
         { "id": "goodbye_b", "weight": 2, "text": "See you around. Genuinely.", "videoUrl": "REPLACE_ME_GOODBYE_B" }
       ]
     },
@@ -60,7 +60,7 @@
       "triggers": ["you were terrible", "good riddance", "finally you're leaving", "you were the worst", "nobody will miss you", "you never did any work", "you stole my lunch", "worst hire ever", "you're overrated", "took you long enough"],
       "variants": [
         { "id": "roast_a", "weight": 3, "text": "Wow. On my last week. Bold.", "videoUrl": "REPLACE_ME_ROAST_A" },
-        { "id": "roast_b", "weight": 2, "text": "You know I still have building access until Friday, right?", "videoUrl": "REPLACE_ME_ROAST_B" },
+        { "id": "roast_b", "weight": 2, "text": "You know I've still got building access until Friday, right?", "videoUrl": "REPLACE_ME_ROAST_B" },
         { "id": "roast_c", "weight": 1, "text": "Fair. Genuinely fair.", "videoUrl": "REPLACE_ME_ROAST_C" }
       ]
     },
@@ -71,7 +71,7 @@
       "triggers": ["why are you leaving", "why did you quit", "what made you leave", "why go", "was it something we said", "did they push you out", "why now", "why are you resigning", "what happened"],
       "variants": [
         { "id": "why_a", "weight": 3, "text": "New chapter, same me, slightly better chair.", "videoUrl": "REPLACE_ME_WHY_A" },
-        { "id": "why_b", "weight": 2, "text": "It was time. Also nobody ever fixed the printer.", "videoUrl": "REPLACE_ME_WHY_B" }
+        { "id": "why_b", "weight": 2, "text": "It was time. Also nobody ever fixed that printer.", "videoUrl": "REPLACE_ME_WHY_B" }
       ]
     },
     {
@@ -80,8 +80,8 @@
       "description": "Asking about my new job, new company, or next destination",
       "triggers": ["where are you going", "what's your new job", "who are you joining", "new company", "what will you be doing", "where next", "are you going to a competitor", "what's the new role", "are you joining a startup"],
       "variants": [
-        { "id": "where_a", "weight": 3, "text": "Somewhere new, somewhere exciting, somewhere with a proper coffee machine.", "videoUrl": "REPLACE_ME_WHERE_A" },
-        { "id": "where_b", "weight": 2, "text": "Ask me over a drink and I'll tell you everything.", "videoUrl": "REPLACE_ME_WHERE_B" }
+        { "id": "where_a", "weight": 3, "text": "Somewhere new. Somewhere exciting. Somewhere with a working coffee machine.", "videoUrl": "REPLACE_ME_WHERE_A" },
+        { "id": "where_b", "weight": 2, "text": "Buy me a drink and I'll tell you everything.", "videoUrl": "REPLACE_ME_WHERE_B" }
       ]
     },
     {
@@ -90,8 +90,8 @@
       "description": "Asking to stay in contact, swap numbers, or connect online",
       "triggers": ["keep in touch", "stay in touch", "add me on linkedin", "what's your number", "let's grab coffee", "don't be a stranger", "message me", "we should catch up", "send me your email"],
       "variants": [
-        { "id": "touch_a", "weight": 3, "text": "Absolutely. LinkedIn, WhatsApp, carrier pigeon — I'm reachable.", "videoUrl": "REPLACE_ME_TOUCH_A" },
-        { "id": "touch_b", "weight": 2, "text": "Please do. I will be the one replying six days later.", "videoUrl": "REPLACE_ME_TOUCH_B" }
+        { "id": "touch_a", "weight": 3, "text": "Absolutely. LinkedIn, WhatsApp, carrier pigeon. I'm reachable.", "videoUrl": "REPLACE_ME_TOUCH_A" },
+        { "id": "touch_b", "weight": 2, "text": "Please do. I'll be the one replying six days later.", "videoUrl": "REPLACE_ME_TOUCH_B" }
       ]
     },
     {
@@ -110,8 +110,8 @@
       "description": "Wishing me luck or success in whatever comes next",
       "triggers": ["good luck", "all the best", "best of luck", "smash it", "go get em", "you'll do great", "wishing you well", "knock em dead", "congrats on the new role"],
       "variants": [
-        { "id": "luck_a", "weight": 3, "text": "Thank you! I'll need roughly all of it.", "videoUrl": "REPLACE_ME_LUCK_A" },
-        { "id": "luck_b", "weight": 2, "text": "Appreciate that more than you know.", "videoUrl": "REPLACE_ME_LUCK_B" }
+        { "id": "luck_a", "weight": 3, "text": "Thank you. I'll need roughly all of it.", "videoUrl": "REPLACE_ME_LUCK_A" },
+        { "id": "luck_b", "weight": 2, "text": "That means more than you know.", "videoUrl": "REPLACE_ME_LUCK_B" }
       ]
     },
     {
@@ -121,7 +121,7 @@
       "triggers": ["thank you", "thanks for everything", "thanks for the help", "i appreciate you", "you taught me a lot", "cheers for all your help", "grateful", "thanks"],
       "variants": [
         { "id": "thanks_a", "weight": 3, "text": "No — thank you. Sincerely.", "videoUrl": "REPLACE_ME_THANKS_A" },
-        { "id": "thanks_b", "weight": 2, "text": "That means a lot. Now stop, people are watching.", "videoUrl": "REPLACE_ME_THANKS_B" }
+        { "id": "thanks_b", "weight": 2, "text": "That means a lot. Now stop, people are looking.", "videoUrl": "REPLACE_ME_THANKS_B" }
       ]
     },
     {
@@ -131,7 +131,7 @@
       "triggers": ["another meeting", "standup", "jira ticket", "slack message", "reply all", "sprint planning", "the deadline", "quick sync", "this could have been an email", "who's taking your tickets", "your inbox"],
       "variants": [
         { "id": "joke_a", "weight": 3, "text": "Not my problem after Friday. Say it with me.", "videoUrl": "REPLACE_ME_JOKE_A" },
-        { "id": "joke_b", "weight": 2, "text": "I've marked it as Won't Fix and I've never been happier.", "videoUrl": "REPLACE_ME_JOKE_B" },
+        { "id": "joke_b", "weight": 2, "text": "I've marked it Won't Fix and I've never been happier.", "videoUrl": "REPLACE_ME_JOKE_B" },
         { "id": "joke_c", "weight": 1, "text": "I'm declining that invite from beyond the grave.", "videoUrl": "REPLACE_ME_JOKE_C" }
       ]
     },
@@ -141,8 +141,8 @@
       "description": "Asking me for advice, wisdom, or tips for the people staying behind",
       "triggers": ["any advice", "what should we do", "got any tips", "words of wisdom", "what should i know", "how do i survive here", "advice for the team", "what would you tell your younger self"],
       "variants": [
-        { "id": "advice_a", "weight": 3, "text": "Take the lunch break. Every single day. That's it, that's the wisdom.", "videoUrl": "REPLACE_ME_ADVICE_A" },
-        { "id": "advice_b", "weight": 2, "text": "Ask the annoying question early. It's cheaper than asking it late.", "videoUrl": "REPLACE_ME_ADVICE_B" }
+        { "id": "advice_a", "weight": 3, "text": "Take the lunch break. Every single day. That's it. That's the wisdom.", "videoUrl": "REPLACE_ME_ADVICE_A" },
+        { "id": "advice_b", "weight": 2, "text": "Ask the stupid question early. It's much cheaper than asking it late.", "videoUrl": "REPLACE_ME_ADVICE_B" }
       ]
     },
     {
@@ -161,8 +161,8 @@
       "description": "Anything about lunch, coffee, snacks, the office kitchen or the fridge",
       "triggers": ["coffee", "lunch", "snacks", "who's buying", "the office kitchen", "biscuits", "you owe me a coffee", "the good mugs", "tea round", "fridge"],
       "variants": [
-        { "id": "food_a", "weight": 3, "text": "The fridge is yours now. I'm sorry.", "videoUrl": "REPLACE_ME_FOOD_A" },
-        { "id": "food_b", "weight": 2, "text": "I'm taking the good mug. This is non-negotiable.", "videoUrl": "REPLACE_ME_FOOD_B" }
+        { "id": "food_a", "weight": 3, "text": "The fridge is yours now. I'm so sorry.", "videoUrl": "REPLACE_ME_FOOD_A" },
+        { "id": "food_b", "weight": 2, "text": "I'm taking the good mug. This isn't a discussion.", "videoUrl": "REPLACE_ME_FOOD_B" }
       ]
     },
     {
@@ -181,7 +181,7 @@
       "description": "Asking what I will miss about this place or these people",
       "triggers": ["what will you miss", "what are you going to miss", "will you miss us", "what won't you miss", "anything you'll miss", "will you miss this place"],
       "variants": [
-        { "id": "willmiss_a", "weight": 3, "text": "The people. Obviously the people. Definitely not the parking.", "videoUrl": "REPLACE_ME_WILLMISS_A" },
+        { "id": "willmiss_a", "weight": 3, "text": "The people. Obviously the people. Absolutely not the parking.", "videoUrl": "REPLACE_ME_WILLMISS_A" },
         { "id": "willmiss_b", "weight": 2, "text": "All of you. Some of you slightly more. You know who you are.", "videoUrl": "REPLACE_ME_WILLMISS_B" }
       ]
     },
@@ -191,7 +191,7 @@
       "description": "Talk of the send-off, leaving drinks, party, cheers, celebration",
       "triggers": ["leaving drinks", "are we having a party", "cheers", "first round's on you", "send off", "pub", "celebration", "are you coming out friday", "are we going out"],
       "variants": [
-        { "id": "party_a", "weight": 3, "text": "First round is on me. Second round is on you. Third round is a mystery.", "videoUrl": "REPLACE_ME_PARTY_A" },
+        { "id": "party_a", "weight": 3, "text": "First round's on me. Second round's on you. Third round is a mystery.", "videoUrl": "REPLACE_ME_PARTY_A" },
         { "id": "party_b", "weight": 2, "text": "I'll be there. I'll be emotional. Bring tissues.", "videoUrl": "REPLACE_ME_PARTY_B" }
       ]
     },
@@ -212,7 +212,7 @@
       "triggers": ["asdfgh", "lol", "haha", "bruh", "?????", "blah blah", "wjdkalsd", "beep boop", "hahaha", "lmao"],
       "variants": [
         { "id": "nonsense_a", "weight": 3, "text": "I have no idea what that meant and I respect it enormously.", "videoUrl": "REPLACE_ME_NONSENSE_A" },
-        { "id": "nonsense_b", "weight": 2, "text": "Understood. Completely. Absolutely no notes.", "videoUrl": "REPLACE_ME_NONSENSE_B" }
+        { "id": "nonsense_b", "weight": 2, "text": "Understood. Completely. No notes.", "videoUrl": "REPLACE_ME_NONSENSE_B" }
       ]
     },
     {
