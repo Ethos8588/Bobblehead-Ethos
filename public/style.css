@@ -52,15 +52,23 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* The page is a fixed-height app shell: header, video and composer stay put,
+   and only the conversation scrolls. That keeps the video on screen no matter
+   how long the chat gets. */
 .page {
   max-width: 560px;
   margin: 0 auto;
-  padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+  padding: 20px 16px calc(16px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  min-height: 100dvh;
+  gap: 16px;
+  height: 100dvh;
+  overflow: hidden;
 }
+
+.header,
+.stage,
+.composer { flex: 0 0 auto; }
 
 /* ---------------- Header ---------------- */
 
@@ -91,7 +99,9 @@ html, body {
 .stage-inner {
   position: relative;
   width: 100%;
-  max-width: var(--stage-max);
+  /* Capped by height as well as width, so on a short screen the video shrinks
+     instead of squeezing the chat out of existence. */
+  max-width: min(var(--stage-max), 40dvh);
   aspect-ratio: var(--stage-ratio);
   border-radius: var(--radius);
   overflow: hidden;
@@ -151,7 +161,15 @@ html, body {
 
 /* ---------------- Conversation ---------------- */
 
-.conversation { flex: 1 1 auto; }
+/* The only scrolling region on the page. */
+.conversation {
+  flex: 1 1 auto;
+  min-height: 0;          /* without this, flex refuses to let it shrink */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 4px;     /* keeps bubbles clear of the scrollbar */
+  scrollbar-width: thin;
+}
 
 .messages {
   list-style: none;
@@ -219,12 +237,8 @@ html, body {
 /* ---------------- Composer ---------------- */
 
 .composer {
-  position: sticky;
-  bottom: 0;
   display: flex;
   gap: 8px;
-  padding-top: 4px;
-  background: linear-gradient(to top, var(--bg) 65%, transparent);
 }
 
 .composer-input {
@@ -259,12 +273,21 @@ html, body {
 /* ---------------- Footer ---------------- */
 
 .footer {
+  flex: 0 0 auto;
   text-align: center;
   color: var(--ink-soft);
   font-size: 0.75rem;
 }
 
 .footer p { margin: 0; }
+
+/* On short screens (most phones, especially with the keyboard open) drop the
+   footer and tighten the header so the chat keeps some room. */
+@media (max-height: 720px) {
+  .footer { display: none; }
+  .page { gap: 12px; padding-top: 14px; }
+  .intro { display: none; }
+}
 
 .visually-hidden {
   position: absolute;
